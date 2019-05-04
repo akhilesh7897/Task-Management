@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+
+<style>
+  .content{
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 4px;
+    background: #eeeeee;
+  }
+</style>
+
+<br><br><br>
+
+<div class="container">
+  <div>
+    <div class="content">
+      <h2><%= task.taskname; %></h2>
+      <p>Deadline: <%= task.deadline %></p>
+      <p><%= task.des; %></p>
+    </div> 
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="jumbotron">
+  <div class="container header">
+    <h2 style="text-align: center;">Add a News story</h2><br>
+    <div style="max-width: 600px; margin: 0 auto">
+      <form method="POST" action="/news">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" name="newsitem[title]" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="story">Story</label>
+          <textarea name="newsitem[content]" required class="form-control" rows="4" placeholder=""></textarea>
+        </div>
+        <div class="form-group">
+          <label for="Date">Date</label>
+          <input type="text" name="newsitem[date]" required class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

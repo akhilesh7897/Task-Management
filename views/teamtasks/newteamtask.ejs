@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="jumbotron">
+  <div class="container header">
+    <h2 style="text-align: center;">Add a new team task</h2><br>
+    <div style="max-width: 600px; margin: 0 auto">
+      <form method="POST" action="/teamtasks">
+        <div class="form-group">
+          <label for="Name of the task">Task</label>
+          <input type="text" name="teamtask[taskname]" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <textarea name="teamtask[des]" required class="form-control" rows="2" placeholder=""></textarea>
+        </div>
+        <div class="form-group">
+          <label for="Deadline">Deadline</label>
+          <input type="text" name="teamtask[deadline]" required class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

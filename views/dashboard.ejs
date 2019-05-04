@@ -1,0 +1,94 @@
+<% include partials/header.ejs %>
+
+
+<!-- <style>
+
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    border-right: 100px;
+
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .main {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+
+  .container {
+    padding-left: 100px;
+  }
+
+  /*@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }*/
+
+</style>
+
+
+<div>
+  <div class="sidebar">
+    <a href="">Tasks</a>
+    <a href="">Team Tasks</a>
+    <a href="">Discussions</a>
+    <a href="">My Plans</a>
+    <a href="">My Events</a>
+    <a href="">Pinned news</a>
+  </div>
+</div> -->
+
+<style>
+    body{
+    background: #cccccc;
+  }
+  .top{
+    background: #3b5570;
+    color: #cccccc;
+  }
+</style>
+
+<div class="container">
+  <header class="jumbotron top">
+    <div class="container">
+      <h2>Welcome to Collab</h2>
+    </div>
+  </header>
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% homeitems.forEach(function(item){ %>
+    <div class="col-md-3 col-sm-6">
+      <div>
+        <a href="/<%= item.link %>">
+        <img class="img-thumbnail" src="<%= item.image %>">
+        <div class="caption">
+          <h4><%= item.name %></h4>
+        </div>
+        </a>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+
+<% include partials/footer.ejs %>

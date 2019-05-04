@@ -1,0 +1,28 @@
+<% include partials/header.ejs %>
+
+
+<div class="container">
+  <header class="jumbotron top">
+    <div class="container">
+      <h2>Welcome to Collab</h2>
+    </div>
+  </header>
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% homeitems.forEach(function(item){ %>
+    <div class="col-md-3 col-sm-6">
+      <div>
+        <a href="/<%= item.link %>">
+        <img class="img-thumbnail" src="<%= item.image %>">
+        <div class="caption">
+          <h4><%= item.name %></h4>
+        </div>
+        </a>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+
+<% include partials/footer.ejs %>

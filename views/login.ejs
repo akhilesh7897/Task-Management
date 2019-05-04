@@ -1,0 +1,24 @@
+<% include partials/header.ejs %>
+
+
+<div class="jumbotron">
+  <div class="container header">
+    <h2 style="text-align: center;">Log in</h2><br>
+    <div style="max-width: 600px; margin: 0 auto">
+      <form method="POST" action="/login">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" required class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include partials/footer.ejs %>

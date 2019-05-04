@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="jumbotron">
+  <div class="container">
+    <div style="max-width: 600px; margin: 0 auto">
+      <form method="POST" action="/teamtasks/:id/comments">
+        <div class="form-group">
+          <label for="comment">Text</label>
+          <input type="text" name="comment[text]" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" name="comment[author]" required class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

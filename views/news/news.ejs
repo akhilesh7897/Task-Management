@@ -1,0 +1,24 @@
+<% include ../partials/header.ejs %>
+
+
+<br><br><br>
+
+<div class="container">
+  <button onclick="window.location='/news/new'" class="btn btn-primary">Add new story</button>
+  <% news.forEach(function(newsitem){ %>
+  <div class="content">
+    <p>Published on <%= newsitem.date %></p>
+    <p>By <%= newsitem.author.username %></p>
+    <h2><%= newsitem.title %></h2><hr>
+    <p><%= newsitem.content %></p>
+    <a class="btn btn-primary btn-sm" href="/news/<%= newsitem._id %>/edit" style="margin: 2px 0;">Edit <i class="fas fa-edit"></i></a>
+    <a class="btn btn-primary btn-sm" href="/news/<%= newsitem._id %>/show" style="margin: 2px 0;">Show more</a>
+    <form method="POST" action="news/<%= newsitem._id %>?_method=DELETE" style="display: inline;">
+      <button class="btn btn-danger btn-sm" style="margin: 2px 0;">Delete <i class="fas fa-trash"></i></button>
+    </form>
+  </div> 
+  <% }); %> 
+</div>
+
+
+<% include ../partials/footer.ejs %>

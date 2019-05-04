@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+
+<br><br>
+<h2 style="text-align: center">Tasks <button onclick="window.location='/tasks/new'" class="btn btn-primary">Add new task</button></h2>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <table class="table">
+        <thead>
+            <th scope="col">Task</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Desciption</th>
+            <th scope="col"></th>
+        </thead>
+        <tbody>
+          <% tasks.forEach(function(task){ %>
+          <tr>
+            <td><%= task.taskname %></td>
+            <td><%= task.deadline %></td>
+            <td><%= task.des %></td>
+            <td>
+              <a class="btn btn-info btn-sm" href="/tasks/<%= task.id %>">Show more</a>
+              <a class="btn btn-info btn-sm" href="/tasks/<%= task._id %>/edit">Edit</a>
+              <form method="POST" action="tasks/<%= task._id %>?_method=DELETE" style="display: inline">
+                <button class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

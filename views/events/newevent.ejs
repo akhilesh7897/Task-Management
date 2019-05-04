@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+<div class="jumbotron">
+  <div class="container header">
+    <h2 style="text-align: center;">Add a new event</h2><br>
+    <div style="max-width: 600px; margin: 0 auto">
+      <form method="POST" action="/events">
+        <div class="form-group">
+          <label for="Name of the event">Event</label>
+          <input type="text" name="event[name]" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <textarea name="event[des]" required class="form-control" rows="3" placeholder=""></textarea>
+        </div>
+        <div class="form-group">
+          <label for="Date">Date</label>
+          <input type="text" name="event[date]" required class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="Venuee">Venue</label>
+          <input type="text" name="event[venue]" required class="form-control" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

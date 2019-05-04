@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+
+<style>
+  .content{
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 4px;
+    /*border: 2px solid grey;*/
+    background: #eeeeee;
+  }
+</style>
+
+<br><br><br>
+
+<div class="container">
+  <div>
+    <div class="content">
+      <h2><%= event.name %></h2>
+      <p>Date: <%= event.date %></p>
+      <h5>Venue: <%= event.venue %></h5>
+      <p><%= event.des; %></p>
+    </div> 
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

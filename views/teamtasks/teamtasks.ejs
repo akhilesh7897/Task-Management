@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+
+<br><br>
+<h2 style="text-align: center">Tasks <button onclick="window.location='/teamtasks/new'" class="btn btn-primary">Add new team task</button></h2>
+<br>
+
+<div class="container">
+  <div class="row">
+      <% teamtasks.forEach(function(teamtask){ %>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="taskcard">
+          <h2><%= teamtask.taskname %></h2>
+          <p><%= teamtask.deadline %></p>
+          <p><%= teamtask.des %></p>
+          <p>
+            <a class="btn btn-info" href="/teamtasks/<%= teamtask._id %>">Show more</a>
+            <a class="btn btn-warning" href="/teamtasks/<%= teamtask._id %>/edit">Edit</a>
+            <form method="POST" action="teamtasks/<%= teamtask._id %>?_method=DELETE" style="display: inline">
+              <button class="btn btn-danger">Delete</button>
+            </form>
+          </p>
+        </div>
+      </div>
+      <% }); %>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

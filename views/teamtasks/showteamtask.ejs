@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="container">
+  <div class="col-lg-9">
+    <h2><%= teamtask.taskname %></h2>
+    <p>Deadline: <%= teamtask.deadline %></p>
+    <p><%= teamtask.des %></p>
+    <a class="btn btn-primary btn-sm" href="/teamtasks/<%= teamtask._id %>/comments/new">Add comment</a>
+    <% teamtask.members.forEach(function(member){ %>
+      <li><%= member.username %></li>
+    <% }) %>
+    <p>Created by: <%= teamtask.author.username %></p>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <% teamtask.comments.forEach(function(comment){ %>
+        <p><strong><%= comment.author.username %></strong></p>
+        <p><%= comment.text %></p>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

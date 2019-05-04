@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+
+<style>
+  .content{
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 4px;
+    /*border: 2px solid grey;*/
+    background: #eeeeee;
+  }
+</style>
+
+<br><br><br>
+
+<div class="container">
+  <button onclick="window.location='/events/new'" class="btn btn-primary">Add new event</button>
+  <% events.forEach(function(event){ %>
+  <div class="content">
+    <h2><%= event.eventname %></h2>
+    <p>Date: <%= event.date %></p>
+    <p>Posted by: <%= event.author.username %></p><hr>
+    <h5>Venue: <%= event.venue %></h5>
+    <p><%= event.des.substring(0,100) %></p>
+    <a href="/events/<%= event._id %>" class="btn btn-info" role="button" aria-expanded="false">More info</a>
+  </div> 
+  <% }); %>
+</div>
+
+
+<% include ../partials/footer.ejs %>

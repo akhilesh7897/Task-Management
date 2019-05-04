@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+
+<style>
+  .content{
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 4px;
+    /*border: 2px solid grey;*/
+    background: #eeeeee;
+  }
+</style>
+
+<br><br><br>
+
+<div class="container">
+  <div>
+    <div class="content">
+      <h2><%= newsitem.title %></h2>
+      <p>Published on: <%= newsitem.date %></p>
+      <p>By: <%= newsitem.author.username %></p><hr>
+      <p><%= newsitem.content %></p>
+    </div> 
+  </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>
